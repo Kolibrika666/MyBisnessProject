@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+span {
+    font-size: 18px;
+    padding: 5px 12px;
+    color: green;
+    border-radius: 20px;
+    border: 1px solid green;
+}
+
+form input {
+    border: 1px solid rgb(173, 173, 173);
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 18px;
+    margin: 10px;
+}
+button {
+    padding: 10px;
+    background-color: transparent;
+    font-size: 18px;
+    height: 40px;
+    border-radius: 5px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.table {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content:space-around;
+}
+
+hr {
+    width: 1000px;
+    color: gray;
+}
+
+

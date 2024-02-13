@@ -1,0 +1,19 @@
+section {
+padding: 40px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+justify-items: center;
+font-size: 22px;
+
+}
+
+.item3 {
+    grid-column: span 2;
+  }
+
+
+.span__expenses {
+    color: red;
+    border: 1px solid red;
+}
