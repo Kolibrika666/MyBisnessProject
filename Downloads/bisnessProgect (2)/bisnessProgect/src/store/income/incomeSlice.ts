@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IncomeType } from "../../api/incomeApi";
 
 type initialStateType = {
   incomeSum: string[];
@@ -6,6 +7,11 @@ type initialStateType = {
   expensesSum: string[];
   expensesTotalSum: string;
   balance: number;
+
+  totalIncome: number;
+  totalExpenses: number;
+  income: IncomeType[];
+  expenses: IncomeType[];
 };
 const initialState: initialStateType = {
   incomeSum: [],
@@ -13,6 +19,11 @@ const initialState: initialStateType = {
   expensesSum: [],
   expensesTotalSum: "",
   balance: 0,
+
+  totalIncome: 0,
+  totalExpenses: 0,
+  income: [],
+  expenses: [],
 };
 
 const incomeSlice = createSlice({
@@ -33,9 +44,17 @@ const incomeSlice = createSlice({
       );
       state.balance -= Number(state.expensesTotalSum);
     },
+
+    setIncomeList(state, action: PayloadAction<IncomeType[]>) {
+      //balance
+      state.income = action.payload;
+      state.totalIncome = state.income.reduce((acc, item) => acc + +item, 0);
+      state.balance = state.totalIncome - state.totalExpenses;
+    },
   },
 });
 
-export const { setIncomeSum, setExpensesSum } = incomeSlice.actions;
+export const { setIncomeSum, setExpensesSum, setIncomeList } =
+  incomeSlice.actions;
 
 export default incomeSlice.reducer;

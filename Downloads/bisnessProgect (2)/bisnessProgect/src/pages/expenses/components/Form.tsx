@@ -10,9 +10,9 @@ function ExpensesForm() {
   const dispatch = useAppDispatch();
 
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
+    e.preventDefault();
     doPostExpenses(sum, source);
     dispatch(setExpensesSum(sum));
-    e.preventDefault();
   };
 
   return (

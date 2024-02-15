@@ -12,9 +12,9 @@ function IncomeForm() {
   const dispatch = useAppDispatch();
 
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
+    e.preventDefault();
     doPostIncome(sum, source);
     dispatch(setIncomeSum(sum));
-    e.preventDefault();
   };
 
   return (

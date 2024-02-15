@@ -27,8 +27,8 @@ export const getIncomeData = async () => {
   );
 
   if (response.status !== 200) throw new Error("fetch error");
-  const data = await response.json();
-  const correctData = [];
+  const data = await response.json(); //type
+  const correctData: IncomeType[] = [];
   for (const item in data) {
     correctData.push({
       id: item,
