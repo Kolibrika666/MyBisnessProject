@@ -19,7 +19,7 @@ function Expenses() {
     <>
       <ExpensesForm />
       <ExpensesDataBase date="Дата" sum="Сумма" source="Источник" />
-      {expensesList.map((item) => (
+      {expensesList.reverse().map((item) => (
         <ExpensesDataBase
           date={item.date}
           sum={item.sum}

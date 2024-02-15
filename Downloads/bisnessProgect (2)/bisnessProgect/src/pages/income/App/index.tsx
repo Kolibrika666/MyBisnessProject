@@ -19,7 +19,7 @@ function Income() {
     <>
       <IncomeForm />
       <IncomeDataBase date="Дата" sum="Сумма" source="Источник" />
-      {incomeList.map((item) => (
+      {incomeList.reverse().map((item) => (
         <IncomeDataBase date={item.date} sum={item.sum} source={item.source} />
       ))}
     </>

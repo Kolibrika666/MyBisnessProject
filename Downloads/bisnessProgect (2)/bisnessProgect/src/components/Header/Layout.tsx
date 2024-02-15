@@ -11,6 +11,7 @@ function Layout() {
           className={({ isActive }) => (isActive ? s.yellow : "")}
           to="/balance"
         >
+          {" "}
           Баланс - <span>{balance}</span>
         </NavLink>
         <NavLink
